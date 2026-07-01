@@ -1,0 +1,59 @@
+.carousel-root {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* fade the bottom of the image so categories blend nicely */
+.carousel-root::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, #f3f3f3);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* arrows */
+.carousel .control-arrow {
+  opacity: 0.4;
+  font-size: 20px;
+}
+
+.carousel .control-arrow:hover {
+  opacity: 0.9;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* remove white border around slides */
+.carousel .slide {
+  background: #f3f3f3;
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+  .carousel .slide img {
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carousel .slide img {
+    height: 160px;
+  }
+
+  .carousel-root::after {
+    height: 80px;
+  }
+}

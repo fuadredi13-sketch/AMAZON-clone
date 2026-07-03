@@ -18,7 +18,8 @@
     "numeral": "^2.0.6",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
     "@types/react": "^19.2.17",

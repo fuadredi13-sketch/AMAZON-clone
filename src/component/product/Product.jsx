@@ -17,7 +17,7 @@ const Product = () => {
       });
   }, []);
 
-  return (
+    return (
     <div className="products_container">
       {product.map((singleProduct) => (
         <ProductCard

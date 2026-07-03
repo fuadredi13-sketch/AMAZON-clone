@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import './Header.css'
 import logo from '../../assets/amazonlogo (1).svg'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
@@ -11,7 +12,9 @@ const Header = () => {
 
       {/* Logo */}
       <div className="header-logo">
-        <img src={logo} alt="Amazon logo" />
+        <Link to="/">
+          <img src={logo} alt="Amazon Logo" />
+        </Link>
       </div>
 
       {/* Deliver to */}
@@ -46,20 +49,27 @@ const Header = () => {
     </div>
       {/* Account */}
       <div className="header-nav">
-        <p>Hello, sign in</p>
-        <span>Account & Lists <ArrowDropDownIcon /></span>
+        <Link to="/signup">
+          <p>Hello, sign in</p>
+          <span>Account & Lists <ArrowDropDownIcon /></span>
+        </Link>
       </div>
 
       {/* Returns */}
       <div className="header-nav">
-        <p>Returns</p>
-        <span>& Orders</span>
+        <Link to="/orders">
+           <p>Returns</p>
+          <span>& Orders</span>
+        </Link>
+       
       </div>
 
       {/* Cart */}
       <div className="header-cart">
         <span className="header-cart-count"></span>
-        <span> <ShoppingCartOutlinedIcon /> Cart</span>
+        <Link to="/Cart">
+          <span> <ShoppingCartOutlinedIcon /> Cart</span>
+        </Link>
       </div>
 
     </div>

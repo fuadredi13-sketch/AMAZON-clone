@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import './index.css';
-import Home from './component/home/Home';
+import Routing from './Routing';
 
 function App() {
   return (
     <>
-     <Home />
+      <Routing />
     </>
   );
 }

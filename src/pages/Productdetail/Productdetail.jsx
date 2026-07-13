@@ -7,28 +7,28 @@ import ProductCard from '../../component/product/ProductCard';
 import Loader from '../../component/loader/Loader';
 
 const Productdetail = () => {
-  const [product, setProduct] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [product, setproduct] = useState({});
+  const [isloading, setisLoading] = useState(false);
   const { productId } = useParams();
 
   useEffect(() => {
-    setLoading(true);
+    setisLoading(true);
     axios.get(`${producturl}/${productId}`)
       .then((res) => {
-        setProduct(res.data);
-        setLoading(false);
+        console.log(res.data)
+        setproduct(res.data)
+        setisLoading(false)
+      }).catch((err) => {
+        console.log(err)
+        setisLoading(false);
       })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-      });
   }, [productId]);
 
   return (
     <Layout>
-      {loading ? (<Loader />) : (<ProductCard product={product} />)}
+      {isloading? (<Loader />):(<ProductCard product={product} flex={true} />)}
     </Layout>
-  );
-};
+  )
+}
 
-export default Productdetail;
+export default Productdetail
